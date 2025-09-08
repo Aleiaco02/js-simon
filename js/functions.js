@@ -24,13 +24,17 @@ function arrayUniqueNumbers(numMin, numMax, numberElemnts) {
 // funzione countdown
 function countdown(num) {
     let contatore = document.getElementById("countdown")
+    let form = document.getElementById("answers-form");
+    let mioUl = document.querySelector("ul");
+
         setInterval(() => {
             contatore.innerHTML = num; 
             num--
             if (num < 0) {
                 contatore.innerHTML = "0";
                 clearInterval();
-                
+                form.classList.remove("d-none");
+                mioUl.classList.add("d-none");
             }
         }, 1000);
 }
